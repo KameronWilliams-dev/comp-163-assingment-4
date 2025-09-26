@@ -44,4 +44,27 @@ elif choice=='C':
 else:
     print('Invalid input. You lose study time for the week,')
     study_hours=study_hours-7
+study_options=['Programming','Math','English','History']
+print('\nChoose a subject to focus on this semester:')
+print(study_options)
+subject_choice=input('Your study choice:')
+if subject_choice in study_options:
+    if subject_choice =='Programming' and current_gpa <3.0:
+        current_gpa=current_gpa+0.3
+        social_points=social_points-5
+        print('Programming practice increases your GPA but lowers your social time')
+    elif subject_choice=='Math' or  subject_choice=='History':
+        current_gpa=current_gpa+0.2
+        social_points=social_points+3
+        print(f'{subject_choice} increased GPA and still allowed you to be social')
+    elif subject_choice=='English' and (study_hours>20 and stress_level<60):
+        current_gpa=current_gpa+0.2
+        social_points=social_points+7
+        print('English essayss improved your GPA slightly and allows you to be social')
+    else:
+        print('Your choice had a little effect this time')
+if subject_choice not in study_options:
+    print('Invalid subject choice. No academic progress made.')
+    stress_level=stress_level+10
+
 
