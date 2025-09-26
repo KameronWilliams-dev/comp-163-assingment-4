@@ -66,5 +66,31 @@ if subject_choice in study_options:
 if subject_choice not in study_options:
     print('Invalid subject choice. No academic progress made.')
     stress_level=stress_level+10
+print('Last Semester Assessment...')
+if (current_gpa) is not float:
+    print('Error: GPA type mismatch.')
+elif (current_gpa) is  int:
+    print('Error: Study hours type mismatch')
+else:
+    if current_gpa>=3.5:
+        if stress_level<50:
+            print("Ending: You made the Dean's List! You excelled with low stress.")
+        else:
+            print("Ending: You made the Dean's List, but you are burnt out with high stress levels.")
+    elif 2.5<=current_gpa<3.5:
+        if social_points>=60:
+            print('Ending: Balanced College. Maintained decent grades while still being very social.')
+        else:
+            print("Ending: Average GPA, with limited socialization")
+    else:
+        if stress_level>70:
+            print('Ending: Academic Probation. Overwhelmed and GPA reflected it.')
+        else:
+            print('Ending: Low GPA but you are not stressed.')
+print('Final Stats:')
+print(f'GPA: {current_gpa:.2f}')
+print(f'Study Hours: {study_hours}')
+print(f"Social Points: {social_points}")
+print(f"Stress Level: {stress_level}")
 
 
